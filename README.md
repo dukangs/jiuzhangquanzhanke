@@ -1,3 +1,17 @@
+# Script for aws ec2 deployment
+#!/bin/bash
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+sudo apt-get install -y openjdk-8-jdk
+sudo apt-get install -y maven
+sudo apt-get install -y nodejs
+sudo apt-get install -y yarn
+sudo apt-get install -y unzip
+
+
+
+
 # jiuzhangquanzhanke
 This application was generated using JHipster 5.1.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.1.0](https://www.jhipster.tech/documentation-archive/v5.1.0).
 

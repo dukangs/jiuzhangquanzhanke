@@ -48,6 +48,9 @@ public class CourseService {
         return courseRepository.findAllCoursesDtoWithTeacherName();
     }
 
+    public List<CourseWithTNDto> findAllCoursesDtoWithUserIdFromDB(){
+        return courseRepository.findAllCoursesDtoWithTeacherName();
+    }
 
     public void registerCourse(String courseName) throws Exception{
         Optional<User> curUser = userService.getUserWithAuthorities();

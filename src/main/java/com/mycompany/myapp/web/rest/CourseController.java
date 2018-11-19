@@ -40,6 +40,13 @@ public class CourseController {
         return new ResponseEntity<>(allCourses, HttpStatus.OK);
     }
 
+    @GetMapping(path = "/api/course/findAllCoursesWithUserId", produces = "application/json")
+    public HttpEntity<List<CourseWithTNDto>> findAllCoursesWithUserIdDto(){
+        List<CourseWithTNDto> allCourses = courseService.findAllCoursesDtoWithTeacherNameFromDB();
+
+        return new ResponseEntity<>(allCourses, HttpStatus.OK);
+    }
+
     @PostMapping(path = "/api/course/registerCourse/{courseName}", produces = "application/json")
     public HttpStatus registerCourse(@PathVariable String courseName) {
         try {
@@ -49,4 +56,5 @@ public class CourseController {
             return HttpStatus.UNPROCESSABLE_ENTITY;
         }
     }
+
 }
